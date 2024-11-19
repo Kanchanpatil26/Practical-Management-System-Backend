@@ -15,3 +15,7 @@ app.use("/api/v1",router)
 app.listen(PORT,()=>{
     console.log(`Server is running on port:${PORT}`);
 });
+
+app.get("/",(req,res)=>{
+    res.send("Successfully listening");
+})
