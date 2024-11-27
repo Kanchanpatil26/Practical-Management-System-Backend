@@ -42,7 +42,7 @@ export const isTeacher = async (req, res, next) => {
 
 export const isAdminGet = async (req, res, next) => {
     try {
-        const { email } = req.body; // Get email from request body
+        const { email } = req.params; // Get email from request body
 
         if (!email) {
             return res.status(400).json({
@@ -69,7 +69,7 @@ export const isAdminGet = async (req, res, next) => {
 
 export const isTeacherGet = async (req, res, next) => {
     try {
-        const { email } = req.body; // Get email from request body
+        const { email } = req.params; // Get email from request body
 
         if (!email) {
             return res.status(400).json({
@@ -98,7 +98,7 @@ export const isTeacherGet = async (req, res, next) => {
 
 export const isAdminOrTeacher = async (req, res, next) => {
     try {
-        const email = req.body['email'];
+        const email = req.params['email'];
 
         if (!email) {
             return res.status(400).json({
